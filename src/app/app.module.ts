@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { HomepageModule } from '../app/homepage/homepage.module';
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HomepageModule],
+  imports: [BrowserModule, AppRoutingModule, HomepageModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

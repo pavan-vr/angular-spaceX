@@ -1,5 +1,6 @@
 .main-grid{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: #c4c4c4;
+    grid-template-columns: 1fr 80%;
+    margin: 1em;
+    grid-gap: 1em;
 }
