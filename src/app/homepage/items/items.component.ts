@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ItemService } from '../../services/item.service';
 import { FilterComponent } from '../filter/filter.component';
 @Component({
@@ -7,10 +7,9 @@ import { FilterComponent } from '../filter/filter.component';
   styleUrls: ['./items.component.css'],
 })
 export class ItemsComponent implements OnInit {
-  public receivedData = [];
+  @Input() public receivedData = [];
+
   constructor(private itemService: ItemService) {}
 
-  ngOnInit(): void {
-    this.itemService.getItems().subscribe((data) => (this.receivedData = data));
-  }
+  ngOnInit(): void {}
 }

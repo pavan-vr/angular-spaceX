@@ -1,4 +1,4 @@
 <div class="main-grid">
-  <app-filter></app-filter>
-  <app-items></app-items>
+  <app-filter (year)="setYear($event)"(launching)= "setLaunch($event)" (landing)="setLanding($event)"></app-filter>
+  <app-items [receivedData]="rocketData"></app-items>
 </div>

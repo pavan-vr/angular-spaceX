@@ -3,19 +3,19 @@
   <p>Launch Year</p>
 
   <div class="button-grid">
-    <button *ngFor="let item of years">{{item}}</button>
+    <button *ngFor="let year of years" (click)="setYear(year)">{{year}}</button>
   </div>
 
   <p>Succesful Launch</p>
   <div class="button-grid">
-    <button>True</button>
-    <button>False</button>
+    <button (click)="setLaunch(true)">True</button>
+    <button (click)="setLaunch(false)">False</button>
   </div>
 
   <p>Succesful Landing</p>
   <div class="button-grid">
-    <button>True</button>
-    <button>False</button>
+    <button (click)="setLanding(true)">True</button>
+    <button (click)="setLanding(false)">False</button>
   </div>
 
 </div>
