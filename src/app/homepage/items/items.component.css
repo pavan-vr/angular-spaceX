@@ -1,4 +1,19 @@
 .grid-container{
     display: grid;
     grid-template-columns:25% 25% 25% 25% ;
+    margin: 1rem;
+}
+
+@media screen and (max-width: 700px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1024px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
 }

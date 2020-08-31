@@ -5,7 +5,8 @@
   width: 90%;
   height: 30rem;
   background-color: white;
-  margin:2em;
+  margin:auto;
+  margin-bottom: 1em;
 }
 *{
   box-sizing: border-box;
