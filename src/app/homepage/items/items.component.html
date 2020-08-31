@@ -1,3 +1,6 @@
-<p>items works!</p>
+<div class="grid-container">
+  <div *ngFor="let item of receivedData">
+    <app-rocket-card [item]="item"></app-rocket-card>
+  </div>
 
-<!-- {{receivedData[0]| json}} -->
+</div>
