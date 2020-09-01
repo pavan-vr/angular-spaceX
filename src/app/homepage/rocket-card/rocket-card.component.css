@@ -5,12 +5,14 @@
   width: 90%;
   height: 30rem;
   background-color: white;
-  margin:auto;
+  margin: auto;
   margin-bottom: 1em;
 }
-*{
+
+* {
   box-sizing: border-box;
 }
+
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
@@ -21,21 +23,21 @@
   top: 1em;
   width: 80%;
   height: 13em;
-  display:block;
-  margin:auto;
+  display: block;
+  margin: auto;
   overflow: none;
 }
 
-.card-image img{
+.card-image img {
   display: block;
   position: relative;
   width: 70%;
-  height:100%;
-  margin: auto;   
-  
+  height: 100%;
+  margin: auto;
+
 }
+
 .container {
-  padding: 2px 16px;
-  /* margin : auto */
-  text-align:left ;
+  padding: 2px 2em;
+
 }

@@ -15,22 +15,34 @@ export class LandingPageComponent implements OnInit {
   public filterURL;
   setYear(year): void {
     this.year = year;
+    // this.getFilteredCardsByYears();
     this.getFilteredCards();
   }
   setLaunch(value): void {
     this.launchStatus = value;
+    // this.getFilteredCardsByLaunch();
     this.getFilteredCards();
   }
   setLanding(value): void {
     this.landStatus = value;
     this.getFilteredCards();
   }
+
   getFilteredCards(): void {
     this.itemService
       .getFilterItems(this.year, this.launchStatus, this.landStatus)
       .subscribe((data) => (this.rocketData = data));
-    console.log(this.rocketData);
   }
+  // getFilteredCardsByYears(): void {
+  //   this.filterURL = this.itemService.url;
+  //   this.filterURL = this.filterURL + '&launch_year=' + this.year;
+  //   this.itemService
+  //     .getFilterItems(this.filterURL)
+  //     .subscribe((data) => (this.rocketData = data));
+  // }
+  // getFilteredCardsByLaunch(): void{
+  //   // this.filterURL =
+  // }
 
   ngOnInit(): void {
     this.itemService.getItems().subscribe((data) => (this.rocketData = data));

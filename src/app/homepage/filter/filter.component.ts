@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
-import { ItemService } from '../../services/item.service';
+
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
@@ -26,20 +26,25 @@ export class FilterComponent implements OnInit {
   @Output() year = new EventEmitter();
   @Output() launching = new EventEmitter();
   @Output() landing = new EventEmitter();
-
+  selectedYear;
+  selectedLaunch;
+  selectedLand;
   setYear(year: string): void {
     this.year.emit(year);
+    this.selectedYear = year;
   }
 
   setLaunch(value: boolean): void {
     this.launching.emit(value);
+    this.selectedLaunch = value;
   }
 
   setLanding(value: boolean): void {
     this.landing.emit(value);
+    this.selectedLand = value;
   }
 
-  constructor(private itemService: ItemService) {}
+  constructor() {}
 
   ngOnInit(): void {}
 }

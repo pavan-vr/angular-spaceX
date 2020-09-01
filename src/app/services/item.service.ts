@@ -8,37 +8,8 @@ import { Observable } from 'rxjs';
 export class ItemService {
   public url = 'https:api.spaceXdata.com/v3/launches?limit=100';
   private filterURL;
-  // public filterValues = {
-  //   year: '2013',
-  //   launch: true,
-  //   landing: false,
-  // };
-  // public year = '&launch_year=';
-  // public launch = '&launch_success=';
-  // public land = '&land_success=';
-  constructor(private http: HttpClient) {
-    // this.newurl =
-    //   this.url +
-    //   this.year +
-    //   this.filterValues.year +
-    //   this.launch +
-    //   this.filterValues.launch +
-    //   this.land +
-    //   this.filterValues.landing;
-    // console.log(this.newurl);
-  }
-  // tslint:disable-next-line:typedef
-  // setUrl() {
-  //   this.newurl =
-  //     this.url +
-  //     this.year +
-  //     this.filterValues.year +
-  //     this.launch +
-  //     this.filterValues.launch +
-  //     this.land +
-  //     this.filterValues.landing;
-  //   console.log(this.newurl);
-  // }
+
+  constructor(private http: HttpClient) {}
 
   getItems(): Observable<any> {
     return this.http.get(this.url);
@@ -48,16 +19,33 @@ export class ItemService {
     this.filterURL = this.url;
     this.filterURL = this.filterURL + '&launch_year=' + year;
 
-    this.filterURL =
-      this.filterURL +
-      '&launch_success=' +
-      (launchStatus === true ? 'true' : 'false');
+    switch (launchStatus) {
+      case true:
+        launchStatus = true;
+        break;
+      case false:
+        launchStatus = false;
+        break;
+      default:
+        launchStatus = '';
+    }
+
+    switch (landStatus) {
+      case true:
+        landStatus = true;
+        break;
+      case false:
+        landStatus = false;
+        break;
+      default:
+        landStatus = '';
+    }
+
+    this.filterURL = this.filterURL + '&launch_success=' + launchStatus;
 
     this.filterURL =
-      this.filterURL +
-      '&land_success=' +
-      (landStatus === true ? 'true' : 'false');
-    console.log(this.filterURL);
+      this.filterURL + '&land_success=' + (landStatus === true ? 'true' : '') ||
+      (landStatus === false ? 'false' : '');
 
     return this.http.get(this.filterURL);
   }

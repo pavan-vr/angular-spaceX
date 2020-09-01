@@ -4,10 +4,10 @@
     <img src={{item.links.mission_patch_small}} alt="mission image">
   </div>
   <div class="container">
-    <h4><b>{{item.mission_name}}#{{item.flight_number}}</b></h4>
+    <h4><b style="color: blue;">{{item.mission_name}}#{{item.flight_number}}</b></h4>
     <p><b>Mission Ids:</b></p>
     <ul *ngFor="let id of item.mission_id">
-      <li>{{id}}</li>
+      <li style="color: blue;">{{id}}</li>
     </ul>
     <p><b>Launch Year:</b>
     {{item.launch_year}}</p>

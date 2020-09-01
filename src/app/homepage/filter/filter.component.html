@@ -1,21 +1,24 @@
 <div class="filter">
-  <h4>Filters</h4>
-  <p>Launch Year</p>
+  <div class="filter-card">
+    <h4><b>Filters</b></h4>
+    <p>Launch Year</p>
+    <hr>
+    <div class="button-grid">
+      <button *ngFor="let year of years" (click)="setYear(year)" [ngClass]="{selected: selectedYear == year}">{{year}}</button>
+    </div>
 
-  <div class="button-grid">
-    <button *ngFor="let year of years" (click)="setYear(year)">{{year}}</button>
+    <p>Succesful Launch</p>
+    <hr>
+    <div class="button-grid">
+      <button [ngClass]="{selected: selectedLaunch == true}" (click)="setLaunch(true)">True</button>
+      <button [ngClass]="{selected: selectedLaunch == false}" (click)="setLaunch(false)">False</button>
+    </div>
+
+    <p>Succesful Landing</p>
+    <hr>
+    <div class="button-grid">
+      <button [ngClass]="{selected: selectedLand == true}" (click)="setLanding(true)">True</button>
+      <button [ngClass]="{selected: selectedLand == false}" (click)="setLanding(false)">False</button>
+    </div>
   </div>
-
-  <p>Succesful Launch</p>
-  <div class="button-grid">
-    <button (click)="setLaunch(true)">True</button>
-    <button (click)="setLaunch(false)">False</button>
-  </div>
-
-  <p>Succesful Landing</p>
-  <div class="button-grid">
-    <button (click)="setLanding(true)">True</button>
-    <button (click)="setLanding(false)">False</button>
-  </div>
-
 </div>
