@@ -6,21 +6,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## project details
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+In this SpaceX app using Angular I have created a module called 'homepage' in which all components are present.In this module we have four components namely filter,items,landing-page,rocket-card. landing-page is our component where all the content gets displayed. this landing-page components makes a call to two components namely items and filter. landing-page component from items.service.ts gets the data using http.get() method. this data is passed to items component which in turn passes this data to rocket-card which displays data in form of cards. All the filters i.e year, launch success and land success will be applied through button from filter component and the new url is constructed from base url and from that url the data is loaded
 
 ## Further help
 
