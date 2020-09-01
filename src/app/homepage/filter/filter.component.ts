@@ -30,18 +30,33 @@ export class FilterComponent implements OnInit {
   selectedLaunch;
   selectedLand;
   setYear(year: string): void {
-    this.year.emit(year);
-    this.selectedYear = year;
+    if (year === this.selectedYear) {
+      this.year.emit(' ');
+      this.selectedYear = '';
+    } else {
+      this.year.emit(year);
+      this.selectedYear = year;
+    }
   }
 
-  setLaunch(value: boolean): void {
-    this.launching.emit(value);
-    this.selectedLaunch = value;
+  setLaunch(value): void {
+    if (this.selectedLaunch === value) {
+      this.launching.emit(' ');
+      this.selectedLaunch = null;
+    } else {
+      this.launching.emit(value);
+      this.selectedLaunch = value;
+    }
   }
 
-  setLanding(value: boolean): void {
-    this.landing.emit(value);
-    this.selectedLand = value;
+  setLanding(value): void {
+    if (value === this.selectedLand) {
+      this.landing.emit(' ');
+      this.selectedLand = null;
+    } else {
+      this.landing.emit(value);
+      this.selectedLand = value;
+    }
   }
 
   constructor() {}

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { IrocketCard } from '../rocketCard';
 @Injectable({
   providedIn: 'root',
 })
@@ -11,13 +11,15 @@ export class ItemService {
 
   constructor(private http: HttpClient) {}
 
-  getItems(): Observable<any> {
-    return this.http.get(this.url);
+  getItems(): Observable<IrocketCard[]> {
+    return this.http.get<IrocketCard[]>(this.url);
   }
 
-  getFilterItems(year, launchStatus, landStatus): Observable<any> {
+  getFilterItems(year, launchStatus, landStatus): Observable<IrocketCard[]> {
     this.filterURL = this.url;
-    this.filterURL = this.filterURL + '&launch_year=' + year;
+    if (year !== ' ') {
+      this.filterURL = this.filterURL + '&launch_year=' + year;
+    }
 
     switch (launchStatus) {
       case true:
@@ -27,7 +29,7 @@ export class ItemService {
         launchStatus = false;
         break;
       default:
-        launchStatus = '';
+        launchStatus = ' ';
     }
 
     switch (landStatus) {
@@ -38,15 +40,16 @@ export class ItemService {
         landStatus = false;
         break;
       default:
-        landStatus = '';
+        landStatus = ' ';
     }
+    if (launchStatus !== ' ') {
+      this.filterURL = this.filterURL + '&launch_success=' + launchStatus;
+    }
+    if (landStatus !== ' ') {
+      this.filterURL = this.filterURL + '&land_success=' + landStatus;
+    }
+    console.log(this.filterURL);
 
-    this.filterURL = this.filterURL + '&launch_success=' + launchStatus;
-
-    this.filterURL =
-      this.filterURL + '&land_success=' + (landStatus === true ? 'true' : '') ||
-      (landStatus === false ? 'false' : '');
-
-    return this.http.get(this.filterURL);
+    return this.http.get<IrocketCard[]>(this.filterURL);
   }
 }

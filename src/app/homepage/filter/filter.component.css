@@ -1,39 +1,44 @@
 .filter {
+  display: grid;
+  grid-template-columns: 1fr;
   background-color: white;
   border-radius: 0.5em;
-  /* padding-left: 1em; */
-  height: 40rem;
   margin: auto;
-  
-    width: 15rem;
-  
 }
-*{
-    box-sizing: border-box;
+
+* {
+  box-sizing: border-box;
 }
-.filter-card{
-    margin: auto auto;
-    width: 90%;
-    /* height: 90%; */
+
+.filter-card {
+  margin: auto auto;
+  width: 90%;
+  padding: 1em;
+
 }
-.selected{
+
+.selected {
   background-color: green;
 }
-hr{
-
-    width: 80%;
-    margin: auto;
+p{
+  text-align: center;
 }
+hr {
+  width: 80%;
+  margin: auto;
+}
+
 .button-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-row-gap: 1em;
-  padding-top: 1em ;
+  padding-top: 1em;
+  margin: auto;
 }
 
 button {
   width: 5rem;
-  border-radius: 0.3rem;
+  border-radius: 0.4rem;
   background-color: #d2f6b4;
   padding: 0.2em;
 }
@@ -43,7 +48,7 @@ button:hover {
 }
 
 @media screen and (min-width: 700px) and (max-width: 1024px) {
-    .filter{
-        position:fixed;
-    }
+  .filter {
+    position: fixed;
+  }
 }
