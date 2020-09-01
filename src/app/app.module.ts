@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomepageModule } from '../app/homepage/homepage.module';
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HomepageModule, HttpClientModule],
+  imports: [BrowserModule.withServerTransition({ appId: 'serverApp' }), AppRoutingModule, HomepageModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

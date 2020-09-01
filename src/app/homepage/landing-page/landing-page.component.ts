@@ -20,7 +20,6 @@ export class LandingPageComponent implements OnInit {
   setLaunch(value): void {
     this.launchStatus = value;
     this.getFilteredCards();
-    console.log(this.launchStatus);
   }
   setLanding(value): void {
     this.landStatus = value;

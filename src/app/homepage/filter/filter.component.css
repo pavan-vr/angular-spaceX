@@ -47,8 +47,9 @@ button:hover {
   background-color: rgb(73, 211, 73);
 }
 
-@media screen and (min-width: 700px) and (max-width: 1024px) {
-  .filter {
-    position: fixed;
-  }
+@media screen and (min-width: 700px) {
+  
+
+ 
 }
+
