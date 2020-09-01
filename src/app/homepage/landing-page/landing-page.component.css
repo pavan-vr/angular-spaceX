@@ -2,28 +2,31 @@
   display: grid;
   grid-template-columns: 1fr;
   margin: 1em;
-    grid-gap: 1em;
+  grid-gap: 1em;
 }
-
 
 @media screen and (min-width: 700px) {
   .main-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  p,h4,li{
+  p,
+  h4,
+  li {
     font-size: 1.5em;
   }
 }
 
-@media screen and (min-width:1025px) {
+@media screen and (min-width: 1025px) {
   .main-grid {
     display: grid;
     grid-template-columns: 1fr 80%;
     margin: 1em;
     grid-gap: 1em;
   }
-  p,h4,li{
+  p,
+  h4,
+  li {
     font-size: 1em;
   }
 }

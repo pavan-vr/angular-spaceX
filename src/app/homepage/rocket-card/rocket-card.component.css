@@ -44,5 +44,20 @@ p{
 
 }
 
+@media screen and (min-width: 700px) {
 
+  p,
+  h4,
+  li {
+    font-size: 1.5em;
+  }
+}
 
+@media screen and (min-width: 1025px) {
+ 
+  p,
+  h4,
+  li {
+    font-size: 1em;
+  }
+}

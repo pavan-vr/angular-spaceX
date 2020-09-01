@@ -14,13 +14,12 @@
   margin: auto auto;
   width: 90%;
   padding: 1em;
-
 }
 
 .selected {
   background-color: green;
 }
-p{
+p {
   text-align: center;
 }
 hr {
@@ -48,8 +47,17 @@ button:hover {
 }
 
 @media screen and (min-width: 700px) {
-  
-
- 
+  p,
+  h4,h2
+  li {
+    font-size: 1.5em;
+  }
 }
 
+@media screen and (min-width: 1025px) {
+  p,
+  h4,h2
+  li {
+    font-size: 1em;
+  }
+}
